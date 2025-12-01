@@ -1,5 +1,11 @@
 name = "nexora-ai"
+main = "src/index.ts"
 compatibility_date = "2025-12-01"
 
+# 部署静态资源（Vite 构建后会生成 dist/）
 [assets]
 directory = "./dist"
+binding = "ASSETS" # Worker 中访问静态资源的绑定名称
+
+# 如果你有 Workers 代码，设置入口
+# 如果没有，可以删除 main=，仅当作静态资源部署
